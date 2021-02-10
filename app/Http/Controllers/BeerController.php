@@ -15,7 +15,10 @@ class BeerController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $beers = Beer::all();
+
+        // tradotto vede beers in home
+        return view('home', compact('beers'));
     }
 
     /**
@@ -47,7 +50,8 @@ class BeerController extends Controller
      */
     public function show($id)
     {
-        //
+        $beer = Beer::find($id);
+        return view('beer', compact('beer'));
     }
 
     /**
