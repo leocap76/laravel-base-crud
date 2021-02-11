@@ -41,16 +41,16 @@ class BeerController extends Controller
     {
         $data = $request->all();
         $newBeer = new Beer;
-        $newBeer-> $data['name'];
-        $newBeer-> $data['category'];
-        $newBeer-> $data['price'];
-        $newBeer-> $data['abv'];
-        $newBeer-> $data['description'];
-        $newBeer-> $data['filepath'];
+        $newBeer->name = $data['name'];
+        $newBeer->category = $data['category'];
+        $newBeer->price = $data['price'];
+        $newBeer->abv = $data['abv'];
+        $newBeer->description = $data['description'];
+        $newBeer->filepath = $data['filepath'];
 
         $newBeer-> save();
 
-        return redirect()-> route('birre.index');
+        return redirect()->route('birre.index');
     }
 
     /**
@@ -62,6 +62,7 @@ class BeerController extends Controller
     public function show($id)
     {
         $beer = Beer::find($id);
+      
         return view('beer', compact('beer'));
     }
 

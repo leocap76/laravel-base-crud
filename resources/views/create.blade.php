@@ -33,26 +33,14 @@
             </div>
             <div class="form-group">
                 <label for="">FilePath</label>
-                <input type="text" class="form-control" name="description" id="description"  placeholder="">
+                <input type="text" class="form-control" name="filepath" id="filepath"  placeholder="">
             </div>
             <div class="form-group">
                 <label for="">Descrizione</label>
-                <textarea class="form-control" id=""  rows="6"></textarea>
+                <textarea class="form-control" name="description" id="description"  rows="6"></textarea>
             </div>
 
-            <div class="container">
-                    <div class="row align-items-center text-secondary">
-                    
-                    <div class="col-6 col-lg-4 order-lg-1 text-right text-lg-left">
-                        <p class="eyebrow"><button type="button" class="btn btn-outline-dark">
-                <a href="{{ route('birre.index') }}">aggiungi</a>
-                </button></p>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-right mt-4 mt-lg-0 order-lg-3">
-                        <a href="mailto:contact@webuildthemes.com" class="action underline">contact@webuildthemes.com <i class="icon-arrow-right"></i></a>
-                    </div>
-                    </div>
-                </div>
+           <input type="submit" value="crea" class="btn btn-black">
     
         </form>
 </body>

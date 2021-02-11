@@ -67,7 +67,7 @@
                             <td><p>{{ $beer->category}}</p></td>
                         <td><h4>{{ $beer->price }} €</h4></td>
                         <td><p>{{ $beer->description }}</p></td>
-                        <td><img src="{{ $beer->filepath }}" alt=""></td>
+                        <!-- <td><img src="{{ $beer->filepath }}" alt=""></td> -->
                         <td><a href="{{ route('birre.show', $beer->id) }}" class="btn-black">btn</a></td>
                     </tr>
                 </tbody>
