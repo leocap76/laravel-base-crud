@@ -13,6 +13,10 @@
                 <h4>{{ $beer->price }} €</h4>
                 <p>{{ $beer->description }}</p>
                 <img src="{{ $beer->filepath }}" alt="">
-            </div>
+            </div>     
 </body>
+            <footer>
+                <!-- torna a index -->
+                <a href="{{ route('birre.index') }}">torna alla home</a>
+            </footer>
 </html>
