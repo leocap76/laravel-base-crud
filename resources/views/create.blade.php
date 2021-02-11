@@ -12,6 +12,19 @@
 
 <body>
 
+@if($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+    @foreach($errors->all() as $error)
+      <li>
+      {{ $error }}
+      </li>
+      @endforeach 
+    </ul>
+  </div>
+ @endif
+
+
 <form action="{{route('birre.store')}}" method="post">
             @csrf
             @method('POST')

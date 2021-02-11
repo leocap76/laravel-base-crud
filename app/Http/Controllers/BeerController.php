@@ -40,6 +40,16 @@ class BeerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        
+        $request->validate([
+            'name' => 'required|max:50',
+            'category' => 'required|max:50',
+            'price' => 'required|numeric',
+            'abv' => 'required',
+            'description' => 'required',
+            'filepath' => 'required',
+        ]);
+
         $newBeer = new Beer;
         $newBeer->name = $data['name'];
         $newBeer->category = $data['category'];
@@ -59,9 +69,9 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Beer $beer)
     {
-        $beer = Beer::find($id);
+        // $beer = Beer::find($id);
       
         return view('beer', compact('beer'));
     }
