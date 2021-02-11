@@ -49,38 +49,33 @@
 </nav>
 
 
-            @foreach($beers as $beer)
-
+            
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">nome</th>
+                    <th scope="col">type</th>
+                    <th scope="col">price</th>
+                    <th scope="col">description</th>
                     </tr>
-                </thead>
+                </thead>               
+
                 <tbody>
+                @foreach($beers as $beer)
                     <tr>
                         <th scope="row">1</th>
-                            <td><h2>{{ $beer->name }}</h2></td>
+                            <td><a href="{{ route('birre.show', $beer->id) }}" class="btn-black"><h2>{{ $beer->name }}</h2></a></td>
                             <td><p>{{ $beer->category}}</p></td>
                         <td><h4>{{ $beer->price }} €</h4></td>
                         <td><p>{{ $beer->description }}</p></td>
                         <!-- <td><img src="{{ $beer->filepath }}" alt=""></td> -->
-                        <td><a href="{{ route('birre.show', $beer->id) }}" class="btn-black">btn</a></td>
+                        <td></td>
                     </tr>
+                @endforeach
                 </tbody>
                 </table>
-            <div>
-                
-                
-                
-                
-                
-                
-            </div>
-            @endforeach
+            
         </div>
     </body>
 </html>
