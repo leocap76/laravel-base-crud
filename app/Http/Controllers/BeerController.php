@@ -8,6 +8,15 @@ use App\Beer;
 
 class BeerController extends Controller
 {
+     private $validation = [
+        'name' => 'required|max:50',
+        'category' => 'required|max:50',
+        'price' => 'required|numeric',
+        'abv' => 'required',
+        'description' => 'required',
+        'filepath' => 'required',
+     ];
+
     /**
      * Display a listing of the resource.
      *
@@ -40,15 +49,8 @@ class BeerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        
-        $request->validate([
-            'name' => 'required|max:50',
-            'category' => 'required|max:50',
-            'price' => 'required|numeric',
-            'abv' => 'required',
-            'description' => 'required',
-            'filepath' => 'required',
-        ]);
+        // this per riprenderla da una funzione esterna
+        $request->validate($this->validation);
 
         $newBeer = new Beer;
         $newBeer->name = $data['name'];
@@ -84,7 +86,10 @@ class BeerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $beer = Beer::find($id);
+        // dd($beer);
+      // compact beer per riconoscerlo in pagina
+        return view('edit', compact('beer'));
     }
 
     /**
@@ -96,7 +101,13 @@ class BeerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $beer = Beer::find($id);
+
+        $request->validate($this->validation);
+
+        $data = $request->all();
+        $beer->update($data);
+        return redirect()->route('birre.index');
     }
 
     /**
@@ -107,6 +118,14 @@ class BeerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $beer = Beer::find($id);
+
+        $name = $beer->name;
+        $beer->delete();
+
+        return redirect()
+            ->route('birre.index')
+            ->with('message', 'birra'  .$name. 'eliminato correttamente!');
     }
 }

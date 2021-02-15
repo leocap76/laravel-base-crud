@@ -28,6 +28,11 @@
             </nav>
 </header>
 
+
+
+
+
+
 <body>
     @if($errors->any())
     <div class="alert alert-danger">
@@ -41,29 +46,33 @@
     </div>
     @endif
 
+
+
+    
+
     <div class="container">
-        <form action="{{route('birre.store')}}" method="post">
+        <form action="{{route('birre.update', $beer->id )}}" method="post">
             @csrf
-            @method('POST')
+            @method('PUT')
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" name="name" id="name"  placeholder="">
+                <input type="text" class="form-control" name="name" id="name"  value="{{ $beer->name }}">
             </div>
             <div class="form-group">
                 <label for="">Category</label>
-                <input type="text" class="form-control" name="category" id="category"  placeholder="">
+                <input type="text" class="form-control" name="category" id="category"  value="{{ $beer->category }}">
             </div>
             <div class="form-group">
                 <label for="">Price</label>
-                <input type="text" class="form-control" name="price" id="price"  placeholder="">
+                <input type="text" class="form-control" name="price" id="price"  value="{{ $beer->price }}">
             </div>
             <div class="form-group">
                 <label for="">ABV</label>
-                <input type="text" class="form-control" name="abv" id="abv"  placeholder="">
+                <input type="text" class="form-control" name="abv" id="abv"  value="{{ $beer->abv }}">
             </div>
             <div class="form-group">
                 <label for="">FilePath</label>
-                <input type="text" class="form-control" name="filepath" id="filepath"  placeholder="">
+                <input type="text" class="form-control" name="filepath" id="filepath"  value="{{ $beer->filepath }}">
             </div>
             <div class="form-group">
                 <label for="">Descrizione</label>
@@ -75,6 +84,9 @@
         </form>
      </div>
 </body>
+
+
+
 
 <footer class="bg-black border-top section-sm text-white">
                 <!-- torna a index -->
