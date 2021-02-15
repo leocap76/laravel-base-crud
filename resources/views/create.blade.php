@@ -18,11 +18,14 @@
                    <li class="nav-item active">
                       <a class="nav-link" href="{{ route('birre.index') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{{ route('birre.create') }}">crea <span class="sr-only">(current)</span></a>
+                    </li>
                     
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  <button class="btn btn-primary" type="submit">Search</button>
                 </form>
               </div>
             </nav>
@@ -41,7 +44,7 @@
     </div>
     @endif
 
-    <div class="container">
+    <div class="container mt-5">
         <form action="{{route('birre.store')}}" method="post">
             @csrf
             @method('POST')
@@ -70,7 +73,7 @@
                 <textarea class="form-control" name="description" id="description"  rows="6"></textarea>
             </div>
 
-           <input type="submit" value="crea" class="btn btn-black">
+           <input type="submit" value="crea" class="btn btn-primary mb-5">
     
         </form>
      </div>

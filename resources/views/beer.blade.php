@@ -18,17 +18,20 @@
                    <li class="nav-item active">
                       <a class="nav-link" href="{{ route('birre.index') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{{ route('birre.create') }}">crea <span class="sr-only">(current)</span></a>
+                    </li>
                     
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  <button class="btn btn-primary" type="submit">Search</button>
                 </form>
               </div>
             </nav>
 
 
-   <div class="container">
+   <div class="container mt-5 mb-5">
       <h2>{{ $beer->name }}</h2>
       <p>{{ $beer->category}}</p>
       <h4>{{ $beer->price }} €</h4>
@@ -36,20 +39,14 @@
        <img src="{{ $beer->filepath }}" class="img-thumbnail rounded mx-auto d-block" alt="">
    </div>     
 </body>
-        <footer class="bg-black border-top section-sm text-white">
-                <!-- torna a index -->
-                
-                
-                <div class="container">
-                    
-                    
-                        <p class="eyebrow">
-                            <button type="button" class="btn btn-outline-dark">
-                              <a href="{{ route('birre.index') }}">torna alla home</a>
-                            </button>
-                        </p>
-                    
-                </div>
-    
-            </footer>
+
+ <footer class="bg-black border-top section-sm text-white mt-5 mb-5">
+                <!-- torna a index -->             
+     <p class="eyebrow">
+      <button type="button" class="btn btn-outline-dark">
+        <a href="{{ route('birre.index') }}">torna alla home</a>
+      </button>
+    </p> 
+</footer>
+
 </html>
