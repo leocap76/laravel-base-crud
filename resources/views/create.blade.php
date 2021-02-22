@@ -73,6 +73,11 @@
                 <textarea class="form-control" name="description" id="description"  rows="6"></textarea>
             </div>
 
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="tag-{{ $tag->id }}" id="tag-{{ $tag->id }}" name="tags[]">
+                <label class="form-check-label" for="tag-{{ $tag->id }}"></label>
+            </div>
+
            <input type="submit" value="crea" class="btn btn-primary mb-5">
     
         </form>

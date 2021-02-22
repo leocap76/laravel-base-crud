@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Beer;
+use App\Tag;
 
 class BeerController extends Controller
 {
@@ -37,7 +38,11 @@ class BeerController extends Controller
      */
     public function create()
     {
+        $tags = Tag::all();
+        return view('birre', compact('tags'));
+
         return view('create');
+
     }
 
     /**
