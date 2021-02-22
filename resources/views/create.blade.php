@@ -72,12 +72,13 @@
                 <label for="">Descrizione</label>
                 <textarea class="form-control" name="description" id="description"  rows="6"></textarea>
             </div>
-
-            <div class="form-check">
+            <h3>ingredients</h3>
+            @foreach($tags as $tag)
+            <div class="form-check  mb-5">
                 <input class="form-check-input" type="checkbox" value="tag-{{ $tag->id }}" id="tag-{{ $tag->id }}" name="tags[]">
-                <label class="form-check-label" for="tag-{{ $tag->id }}"></label>
+                <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
             </div>
-
+            @endforeach
            <input type="submit" value="crea" class="btn btn-primary mb-5">
     
         </form>

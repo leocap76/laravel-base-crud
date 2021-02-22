@@ -39,9 +39,7 @@ class BeerController extends Controller
     public function create()
     {
         $tags = Tag::all();
-        return view('birre', compact('tags'));
-
-        return view('create');
+        return view('create', compact('tags'));
 
     }
 
