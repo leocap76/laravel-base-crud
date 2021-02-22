@@ -14,8 +14,8 @@
     </head>
     
       <body>
-        <div class="flex-center position-ref full-height">
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="flex-center position-ref full-height ">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark ">
                   <a class="navbar-brand" href="{{ route('birre.index') }}">BIRRE</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,8 @@
               </div>
             </nav>
 
-        <div class="container mt-5">         
+        <div class="container mt-5">  
+        <h2>Lista Delle Birre Artigianali</h2>       
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
@@ -60,7 +61,7 @@
                             <td><h2>{{ $beer->name }}</h2></td>
                             <td><p>{{ $beer->category}}</p></td>
                         <td><h4>{{ $beer->price }} €</h4></td>
-                        <td><p>{{ $beer->description }}</p></td>
+                        <td class="scrollspy-example"><p>{{ $beer->description }}</p></td>
                         <!-- <td><img src="{{ $beer->filepath }}" alt=""></td> -->
                         <td><a href="{{ route('birre.show', $beer->id) }}" class="btn btn-primary"> <i class="fas fa-beer"></i></a></td>
                         <td><a href="{{ route('birre.edit', $beer->id) }}" class="btn btn-primary"> <i class="fas fa-edit"></i></a></td>
@@ -75,10 +76,13 @@
                           </form>
                         </td>
                     </tr>
+                    
                 @endforeach
                 </tbody>
                 </table>
+                
                 </div>   
+                
         </div>
       </body>
 </html>

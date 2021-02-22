@@ -21,7 +21,7 @@ class CreateBeersTable extends Migration
             $table->string('abv', 10);
             $table->string('description', 700);
             $table->string('filepath', 255);
-            $table->timestamps();
+            $table->timestamps('');
 
             
             // nome, tipo, alcol

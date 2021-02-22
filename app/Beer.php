@@ -15,4 +15,9 @@ class Beer extends Model
         'filepath',
         'description'
     ];
+
+    public function tags(){
+        return $this-> belongToMany('App\Tag');
+    }
+
 }
