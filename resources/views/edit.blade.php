@@ -82,6 +82,19 @@
                 <textarea class="form-control" name="description" id="description"  rows="6"></textarea>
             </div>
 
+            <div class="mt-5">
+                <h3>ingredients</h3>
+                @foreach($tags as $tag)
+                <div class="form-check  ">
+                    <input class="form-check-input" type="checkbox" value="tag-{{ $tag->id }}" id="tag-{{ $tag->id }}" name="tags[]">
+                    @if($beers->tags->contains($tags->id)) 
+                    checked 
+                    @endif
+                    <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
+                </div>
+                @endforeach
+            </div>
+
            <input type="submit" value="crea" class="btn btn-primary mb-5">
     
         </form>

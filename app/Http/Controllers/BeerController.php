@@ -111,6 +111,12 @@ class BeerController extends Controller
         $data = $request->all();
         $beer->update($data);
         return redirect()->route('birre.index');
+
+        if (empty($data["tags"])) {
+            $beer->tags()->detach();
+        }else{
+            $beer->tags()->sync(($data[$tags]));
+        }
     }
 
     /**
